@@ -2142,7 +2142,7 @@ function App() {
         />
       ) : null}
 
-      <Space size={16} className="page-stack analytics-summary-row" wrap>
+      <div className="analytics-summary-grid">
         <Card className="analytics-summary-card">
           <Statistic
             title={isShowingCampusNatural ? "原始订单量" : "参考订单量"}
@@ -2168,7 +2168,7 @@ function App() {
             suffix={`/ ${calendarTotalCampusCount}`}
           />
         </Card>
-      </Space>
+      </div>
 
       <Card
         title="校园订单月度明细"
@@ -2245,7 +2245,7 @@ function App() {
           />
         </Sider>
 
-        <Layout>
+        <Layout className="page-main">
           <Header
             className="page-header"
             style={{
@@ -2254,7 +2254,9 @@ function App() {
               borderBottom: `1px solid ${token.colorBorderSecondary}`,
             }}
           >
-            <Typography.Text strong>{headerTitle}</Typography.Text>
+            <Typography.Text strong className="page-header-title">
+              {headerTitle}
+            </Typography.Text>
             <Space className="page-header-actions" size={12}>
               <Space size={8} className="page-role-switch">
                 <Typography.Text type="secondary">当前角色</Typography.Text>
