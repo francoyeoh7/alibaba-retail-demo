@@ -301,6 +301,7 @@ function App() {
   const [campusScenarioId, setCampusScenarioId] =
     useState<CampusOrderScenarioId>("calendar-ready");
   const [campusMode, setCampusMode] = useState<CampusStatsMode>("recommended");
+  const [guideModalOpen, setGuideModalOpen] = useState(false);
   const [calendarManagerOpen, setCalendarManagerOpen] = useState(false);
   const [calendarImportOptionId, setCalendarImportOptionId] = useState<string>();
   const [calendarEditSchool, setCalendarEditSchool] = useState<CampusCalendarSchool | null>(null);
@@ -637,6 +638,15 @@ function App() {
 
   const handleOpenCalendarManager = () => {
     setCalendarManagerOpen(true);
+  };
+
+  const handleGoHome = () => {
+    closeCrossRoleOverlays();
+    setGuideModalOpen(false);
+    setDetailRecord(null);
+    setDraft(null);
+    setRecordView("list");
+    setActiveMenuKey(activeRole === "operator" ? "approvals" : "records");
   };
 
   const closeCrossRoleOverlays = () => {
@@ -2275,8 +2285,12 @@ function App() {
                   </Button>
                 </Dropdown>
               </Space>
-              <Button icon={<FileProtectOutlined />}>设计说明</Button>
-              <Button type="primary">提交视图</Button>
+              <Button icon={<FileProtectOutlined />} onClick={() => setGuideModalOpen(true)}>
+                使用说明
+              </Button>
+              <Button type="primary" icon={<HomeOutlined />} onClick={handleGoHome}>
+                返回首页
+              </Button>
             </Space>
           </Header>
 
@@ -2302,6 +2316,37 @@ function App() {
                         : renderRecordsList()}
           </Content>
         </Layout>
+
+        <Modal
+          title="使用说明"
+          open={guideModalOpen}
+          onCancel={() => setGuideModalOpen(false)}
+          footer={[
+            <Button key="close" type="primary" onClick={() => setGuideModalOpen(false)}>
+              我知道了
+            </Button>,
+          ]}
+          destroyOnHidden
+        >
+          <Space direction="vertical" size={12}>
+            <Alert
+              type="info"
+              showIcon
+              message="当前页面为笔试 Demo 原型，重点演示零售便利店平台的四类核心需求。"
+            />
+            <Descriptions size="small" column={1} bordered>
+              <Descriptions.Item label="服务商端">
+                申请记录、新店转老店升级、员工维护、校园经营分析。
+              </Descriptions.Item>
+              <Descriptions.Item label="运营端">
+                审批管理，可从点位申请记录快速进入审批详情。
+              </Descriptions.Item>
+              <Descriptions.Item label="返回首页">
+                点击右上角【返回首页】可快速回到当前角色的默认首页。
+              </Descriptions.Item>
+            </Descriptions>
+          </Space>
+        </Modal>
 
         <Modal
           title="点位信息待完善"
@@ -2453,6 +2498,12 @@ function App() {
           onOk={handleTransferLegalAccount}
           okText="确认移交"
           cancelText="取消"
+          styles={{
+            body: {
+              maxHeight: "calc(100vh - 320px)",
+              overflowY: "auto",
+            },
+          }}
           destroyOnHidden
         >
           <Form form={transferForm} layout="vertical">
@@ -2586,6 +2637,7 @@ function App() {
           title="手动调整日期"
           open={Boolean(calendarEditSchool)}
           onCancel={() => setCalendarEditSchool(null)}
+          width={920}
           footer={[
             <Button key="cancel" onClick={() => setCalendarEditSchool(null)}>
               取消
@@ -2598,6 +2650,13 @@ function App() {
               保存并重新计算
             </Button>,
           ]}
+          styles={{
+            body: {
+              maxHeight: "calc(100vh - 240px)",
+              overflowY: "auto",
+              paddingRight: 20,
+            },
+          }}
           destroyOnHidden
         >
           {calendarEditSchool ? (
