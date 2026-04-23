@@ -189,6 +189,16 @@ body {
   text-align: left !important;
 }
 
+.record-status-header,
+.record-status-cell {
+  text-align: left !important;
+}
+
+.record-status-stack {
+  width: 100%;
+  align-items: flex-start;
+}
+
 .record-action-cell {
   align-items: flex-start;
 }
@@ -205,13 +215,17 @@ body {
 
 .employee-action-row {
   row-gap: 6px;
-  column-gap: 6px;
+  column-gap: 8px;
   align-items: center;
   justify-content: flex-start;
 }
 
 .employee-action-row .record-action-button {
   padding-inline: 0 !important;
+}
+
+.employee-action-row .ant-btn {
+  gap: 4px !important;
 }
 
 .employee-table .ant-table-tbody > tr > td {

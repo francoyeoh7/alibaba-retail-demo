@@ -912,10 +912,12 @@ function App() {
       title: "审批状态",
       key: "status",
       width: 180,
+      className: "record-status-cell",
+      onHeaderCell: () => ({ className: "record-status-header" }),
       render: (_: string, record: ApplicationRecord) => (
-        <Space direction="vertical" size={4}>
+        <Space direction="vertical" size={4} className="record-status-stack">
           {isConvertible(record) ? (
-            <Button type="link" onClick={() => handlePendingEntry(record)}>
+            <Button type="link" className="record-action-button" onClick={() => handlePendingEntry(record)}>
               点位信息待完善
             </Button>
           ) : (
