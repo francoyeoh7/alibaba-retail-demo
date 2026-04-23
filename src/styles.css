@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-layout {
+  min-height: 100vh;
+}
+
+.page-logo {
+  height: 56px;
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.page-logo span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.page-logo-mark {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.page-role-switch {
+  align-items: center;
+}
+
+.page-role-trigger {
+  min-width: 132px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.page-breadcrumb {
+  margin-bottom: 16px;
+}
+
+.page-stack {
+  width: 100%;
+}
+
+.page-utility-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.query-form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.section-card {
+  margin-top: 16px;
+}
+
+.section-alert {
+  margin-top: 16px;
+}
+
+.action-card .ant-card-body {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-description {
+  margin-bottom: 16px;
+}
+
+.detail-info-descriptions .ant-descriptions-row > td {
+  vertical-align: top;
+}
+
+.detail-info-descriptions .ant-descriptions-item-container {
+  align-items: flex-start;
+}
+
+.detail-info-descriptions .ant-descriptions-item-content {
+  align-items: flex-start;
+}
+
+.detail-link-value {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.attachment-column-header,
+.attachment-column-cell {
+  text-align: left !important;
+}
+
+.record-action-cell {
+  align-items: flex-start;
+}
+
+.record-action-button {
+  padding-inline: 0 !important;
+}
+
+.employee-action-cell {
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.employee-action-row {
+  row-gap: 6px;
+  column-gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.employee-action-row .record-action-button {
+  padding-inline: 0 !important;
+}
+
+.employee-table .ant-table-tbody > tr > td {
+  vertical-align: middle;
+}
+
+.transfer-candidate-panel,
+.transfer-candidate-group,
+.transfer-candidate-list {
+  width: 100%;
+}
+
+.transfer-pagination-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.campus-column-header,
+.campus-column-cell {
+  text-align: left !important;
+}
+
+.campus-action-cell {
+  vertical-align: middle;
+}
+
+.campus-action-button {
+  padding-inline: 0 !important;
+}
+
+.campus-action-cell.ant-table-cell {
+  text-align: left !important;
+}
+
+.approval-column-header,
+.approval-column-cell {
+  text-align: left !important;
+}
+
+.approval-cell-stack {
+  align-items: flex-start;
+}
+
+.approval-status-cell {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.approval-action-cell {
+  vertical-align: middle;
+}
+
+.form-rail {
+  max-width: 680px;
+  width: 100%;
+}
+
+.continue-form-shell {
+  width: 100%;
+}
+
+.continue-form-shell .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.continue-form-shell .ant-upload-wrapper {
+  width: 100%;
+}
+
+.continue-form-shell .ant-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.upgrade-form-shell {
+  width: 100%;
+}
+
+.upgrade-form-shell .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.analytics-summary-row {
+  align-items: stretch;
+}
+
+.analytics-summary-card {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.analytics-summary-card .ant-card-body {
+  min-height: 132px;
+}
+
+.upgrade-store-note {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.upgrade-field-hint {
+  display: block;
+  margin: -8px 0 20px;
+}
